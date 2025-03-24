@@ -118,6 +118,8 @@ import re
 # Chargement du dataset Titanic
 df = pd.read_csv('./titanic-train.csv')
 
+print(df.head())
+
 #Question 1 : Affichage des schémas du dataframe
 print("\n" + "="*50)
 print("📊 QUESTION 1 : Schémas du DataFrame (Types de données)")
@@ -130,6 +132,7 @@ print("="*50)
 print("📊 QUESTION 2 : Nombre total de passagers")
 print("="*50)
 print(f"Total Passagers : {df['PassengerId'].count()}")
+print(f'Nombre de passagers sans doublon : {df["PassengerId"].duplicated().sum()}')
 print("\n")
 
 #Question 3 : Affichage des premières lignes du dataset
@@ -150,10 +153,11 @@ print("\n")
 print("="*50)
 print("📊 QUESTION 5 : Analyse de Pclass, Survived et Age")
 print("="*50)
-print("▶️ Aperçu des 5 premières lignes :\n", df[['Pclass', 'Survived', 'Age']].head(), "\n")
-print("▶️ Statistiques descriptives :\n", df[['Pclass', 'Survived', 'Age']].describe(), "\n")
-print("▶️ Types de données :\n", df[['Pclass', 'Survived', 'Age']].dtypes, "\n")
-print("▶️ Valeurs manquantes :\n", df[['Pclass', 'Survived', 'Age']].isnull().sum(), "\n")
+list_col = ['Pclass', 'Survived', 'Age']
+print("▶️ Aperçu des 5 premières lignes :\n", df[list_col].head(), "\n")
+print("▶️ Statistiques descriptives :\n", df[list_col].describe(), "\n")
+print("▶️ Types de données :\n", df[list_col].dtypes, "\n")
+print("▶️ Valeurs manquantes :\n", df[list_col].isnull().sum(), "\n")
 
 #Question 6 : Visualisation des survivants
 print("="*50)
