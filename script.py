@@ -220,6 +220,10 @@ plt.ylabel('Prix du billet (en monnaie Titanic)', fontsize=12)
 plt.show()
 
 
+
+print("="*50)
+print("📊 QUESTION 11 : Traitement des valeurs manquantes")
+print("="*50)
 # Extraction du titre des noms
 df['Initial'] = df['Name'].apply(lambda x: re.search(r"[A-Za-z]+\.", x).group(0))  # Extrait Mr., Mrs., Miss., etc.
 
